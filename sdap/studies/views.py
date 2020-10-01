@@ -176,8 +176,6 @@ def get_graph_data(request):
         if "|" in request.GET['gene_id']:
             list_gene = request.GET['gene_id'].split("|")
             for g_ in list_gene :
-                if not g_:
-                    continue
                 gene = get_object_or_404(Gene, id=g_)
                 exp_list.append(gene)
         else :
